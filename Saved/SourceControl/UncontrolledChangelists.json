@@ -1,0 +1,28 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Blueprints/Player.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Characters/blacksprite1.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Characters/blacksprite1_Sprite.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Characters/blacksprite2.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Characters/blacksprite2_Sprite.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Characters/Idle.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Levels/LvlHouse.umap",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Textures/HouseMaterial.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Textures/house_template_night_1.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Blueprints/Player1.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Blueprints/EnhancedInput/Jump.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Blueprints/EnhancedInput/ControlContext.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Blueprints/EnhancedInput/Move.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Items/IdleGlock.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Items/pinkglockfrm0.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Items/pinkglockfrm0_Sprite.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Levels/Level_House.umap"
+			]
+		}
+	]
+}

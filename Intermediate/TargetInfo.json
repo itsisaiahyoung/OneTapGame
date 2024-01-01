@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "OneTapGame",
+			"Path": "..\\Source\\OneTapGame.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "OneTapGameEditor",
+			"Path": "..\\Source\\OneTapGameEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
