@@ -5,7 +5,6 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Blueprints/Player.uasset",
 				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Characters/blacksprite1.uasset",
 				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Characters/blacksprite1_Sprite.uasset",
 				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Characters/blacksprite2.uasset",
@@ -21,6 +20,9 @@
 				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Items/IdleGlock.uasset",
 				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Items/pinkglockfrm0.uasset",
 				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Assets/Items/pinkglockfrm0_Sprite.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Blueprints/Gun1.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Blueprints/Glock.uasset",
+				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Blueprints/Player.uasset",
 				"C:/Users/conta/OneDrive/Documents/Unreal Projects/OneTapGame/Content/Levels/Level_House.umap"
 			]
 		}

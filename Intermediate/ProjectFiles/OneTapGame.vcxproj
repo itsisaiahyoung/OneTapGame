@@ -109,7 +109,10 @@
     <None Include="..\..\OneTapGame.uproject"/>
     <None Include="..\..\Source\OneTapGame.Target.cs"/>
     <None Include="..\..\Source\OneTapGameEditor.Target.cs"/>
+    <None Include="..\..\.gitattributes"/>
+    <None Include="..\..\.gitignore"/>
     <None Include="..\..\.vsconfig"/>
+    <None Include="..\..\README.md"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
@@ -120,6 +123,12 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\OneTapGame\MyCharacter.h"/>
+    <ClCompile Include="..\..\Source\OneTapGame\MyGun.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OneTapGame\MyGun.h"/>
     <None Include="..\..\Source\OneTapGame\OneTapGame.Build.cs"/>
     <ClCompile Include="..\..\Source\OneTapGame\OneTapGame.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

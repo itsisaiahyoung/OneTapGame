@@ -16,7 +16,6 @@ void EmptyLinkFunctionForGeneratedCodeMyCharacter() {}
 	ONETAPGAME_API UClass* Z_Construct_UClass_AMyCharacter();
 	ONETAPGAME_API UClass* Z_Construct_UClass_AMyCharacter_NoRegister();
 	PAPER2D_API UClass* Z_Construct_UClass_APaperCharacter();
-	PAPER2D_API UClass* Z_Construct_UClass_UPaperSpriteComponent_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_OneTapGame();
 // End Cross Module References
 	void AMyCharacter::StaticRegisterNativesAMyCharacter()
@@ -53,10 +52,6 @@ void EmptyLinkFunctionForGeneratedCodeMyCharacter() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MoveAction_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_MoveAction;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_GunComponent_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_GunComponent;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -139,27 +134,12 @@ void EmptyLinkFunctionForGeneratedCodeMyCharacter() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_MoveAction = { "MoveAction", nullptr, (EPropertyFlags)0x0020080000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, MoveAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyCharacter_Statics::NewProp_MoveAction_MetaData), Z_Construct_UClass_AMyCharacter_Statics::NewProp_MoveAction_MetaData) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyCharacter_Statics::NewProp_GunComponent_MetaData[] = {
-		{ "Category", "Components" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Gun Sprite\n" },
-#endif
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "MyCharacter.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Gun Sprite" },
-#endif
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyCharacter_Statics::NewProp_GunComponent = { "GunComponent", nullptr, (EPropertyFlags)0x00200800000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyCharacter, GunComponent), Z_Construct_UClass_UPaperSpriteComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyCharacter_Statics::NewProp_GunComponent_MetaData), Z_Construct_UClass_AMyCharacter_Statics::NewProp_GunComponent_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_CameraBoom,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_SideViewCameraComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_DefaultMappingContext,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_JumpAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_MoveAction,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyCharacter_Statics::NewProp_GunComponent,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMyCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMyCharacter>::IsAbstract,
@@ -199,9 +179,9 @@ void EmptyLinkFunctionForGeneratedCodeMyCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 4101262630U) },
+		{ Z_Construct_UClass_AMyCharacter, AMyCharacter::StaticClass, TEXT("AMyCharacter"), &Z_Registration_Info_UClass_AMyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyCharacter), 2754700275U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyCharacter_h_2403108361(TEXT("/Script/OneTapGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyCharacter_h_2046212417(TEXT("/Script/OneTapGame"),
 		Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -4,6 +4,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "MyGun.h" // Include the MyGun header
 #include "PaperFlipbookComponent.h"
 
 
@@ -27,10 +28,6 @@ AMyCharacter::AMyCharacter()
     SideViewCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("SideViewCamera"));
     SideViewCameraComponent->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 
-    // Create and attach the gun sprite component
-    GunComponent = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("GunComponent"));
-    GunComponent->SetupAttachment(RootComponent);
-
     SideViewCameraComponent->bUsePawnControlRotation = false;
 
     // Set jump velocity
@@ -40,6 +37,8 @@ AMyCharacter::AMyCharacter()
     GetCharacterMovement()->AirControl = 0.5f; // Adjust this value as needed
 
     CurrentGunAngle = 0.0f;
+    EquippedGun = nullptr;
+
 }
 
 
@@ -104,13 +103,26 @@ void AMyCharacter::Move(const FInputActionValue& Value)
     }
 }
 
-
+void AMyCharacter::EquipGun(AMyGun* GunToEquip)
+{
+    if (GunToEquip)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Equipping gun %s"), *GunToEquip->GetName());
+        GunToEquip->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+        GunToEquip->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::SnapToTargetIncludingScale);
+        EquippedGun = GunToEquip;
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("EquipGun called with null pointer."));
+    }
+}
 
 void AMyCharacter::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    if (GunComponent && Controller)
+    if (Controller)
     {
         FVector2D MousePosition;
         if (APlayerController* PC = Cast<APlayerController>(Controller))
@@ -144,20 +156,25 @@ void AMyCharacter::Tick(float DeltaTime)
             // Calculate the new position of the gun in the arc
             FVector NewGunPosition = CharacterLocation + FVector(FMath::Cos(FMath::DegreesToRadians(ClampedAngle)) * ArcRadius, 0.0f, FMath::Sin(FMath::DegreesToRadians(ClampedAngle)) * ArcRadius);
 
-            // Update the gun's position
-            GunComponent->SetWorldLocation(NewGunPosition);
+            if(EquippedGun)
+			{
+                // Update the gun's position
+                EquippedGun->SetActorLocation(NewGunPosition);
 
-            // Determine sprite rotation
-            if (ClampedAngle > 90.0f || ClampedAngle < -90.0f)
-            {
-                // Flip the gun to face left
-                GunComponent->SetWorldRotation(FRotator(0.0f, 180.0f, 0.0f));
-            }
-            else
-            {
-                // Gun faces right (original orientation)
-                GunComponent->SetWorldRotation(FRotator(0.0f, 0.0f, 0.0f));
-            }
+                // Determine sprite rotation
+                if (ClampedAngle > 90.0f || ClampedAngle < -90.0f)
+                {
+                    // Flip the gun to face left
+                    EquippedGun->SetActorRotation(FRotator(0.0f, 180.0f, 0.0f));
+                }
+                else
+                {
+                    // Gun faces right (original orientation)
+                    EquippedGun->SetActorRotation(FRotator(0.0f, 0.0f, 0.0f));
+                }
+			
+			}
+            
         }
     }
 }

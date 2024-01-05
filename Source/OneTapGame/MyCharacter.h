@@ -7,6 +7,7 @@
 #include "InputActionValue.h"
 #include "EnhancedInputComponent.h"
 #include "PaperSpriteComponent.h"
+#include "MyGun.h" // Include the MyGun header
 #include "MyCharacter.generated.h"
 
 UCLASS(Blueprintable, BlueprintType)
@@ -22,8 +23,12 @@ public:
     virtual void BeginPlay() override;
     virtual void Tick(float DeltaTime) override;
 
+    // Function to equip a gun
+    void EquipGun(AMyGun* GunToEquip);
+
 private:
     float CurrentGunAngle;
+    AMyGun* EquippedGun;
 
 protected:
     // Set up player input
@@ -50,8 +55,4 @@ protected:
     // Move Input Action
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
     class UInputAction* MoveAction;
-    
-    // Gun Sprite
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-    UPaperSpriteComponent* GunComponent;
 };
