@@ -17,7 +17,7 @@ AMyCharacter::AMyCharacter()
     // Create the Camera Boom (spring arm) component
     CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
     CameraBoom->SetupAttachment(RootComponent);
-    CameraBoom->TargetArmLength = 500.0f; // Adjust this value as needed for your game
+    CameraBoom->TargetArmLength = 500.0f;
     CameraBoom->SocketOffset = FVector(0.0f, 0.0f, 75.0f);
     CameraBoom->bUsePawnControlRotation = false;
     CameraBoom->SetUsingAbsoluteRotation(true);
@@ -31,10 +31,10 @@ AMyCharacter::AMyCharacter()
     SideViewCameraComponent->bUsePawnControlRotation = false;
 
     // Set jump velocity
-    GetCharacterMovement()->JumpZVelocity = 600.f; // Adjust this value as needed
+    GetCharacterMovement()->JumpZVelocity = 600.f; 
 
     // Set air control
-    GetCharacterMovement()->AirControl = 0.5f; // Adjust this value as needed
+    GetCharacterMovement()->AirControl = 0.5f; 
 
     CurrentGunAngle = 0.0f;
     EquippedGun = nullptr;
@@ -70,6 +70,12 @@ void AMyCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputC
 
         // Moving
         EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AMyCharacter::Move);
+
+        // Bind the Fire action
+        EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &AMyCharacter::Fire);
+
+        // Bind right-click to ThrowGun function
+        EnhancedInputComponent->BindAction(ThrowAction, ETriggerEvent::Triggered, this, &AMyCharacter::Throw);
     }
 }
 
@@ -117,6 +123,42 @@ void AMyCharacter::EquipGun(AMyGun* GunToEquip)
         UE_LOG(LogTemp, Warning, TEXT("EquipGun called with null pointer."));
     }
 }
+
+void AMyCharacter::Fire()
+{
+    if (EquippedGun)
+    {
+        EquippedGun->Fire();
+    }
+}
+
+void AMyCharacter::Throw()
+{
+    if (EquippedGun)
+    {
+        FVector ThrowDirection = GetActorForwardVector();
+        float ThrowForce = 1000.0f;
+
+        UE_LOG(LogTemp, Warning, TEXT("Throwing gun with direction: %s, force: %f"), *ThrowDirection.ToString(), ThrowForce);
+
+        UPrimitiveComponent* GunPrimitiveComponent = Cast<UPrimitiveComponent>(EquippedGun->GetRootComponent());
+        if (GunPrimitiveComponent)
+        {
+            GunPrimitiveComponent->SetSimulatePhysics(true);
+        }
+
+        // Detach the gun from the character
+        EquippedGun->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+        EquippedGun = nullptr; // Clear the equipped gun
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("No gun equipped to throw."));
+    }
+}
+
+
+
 
 void AMyCharacter::Tick(float DeltaTime)
 {

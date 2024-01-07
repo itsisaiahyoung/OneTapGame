@@ -10,11 +10,13 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMyGun() {}
 // Cross Module References
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
+	ONETAPGAME_API UClass* Z_Construct_UClass_AMyBullet_NoRegister();
 	ONETAPGAME_API UClass* Z_Construct_UClass_AMyGun();
 	ONETAPGAME_API UClass* Z_Construct_UClass_AMyGun_NoRegister();
 	PAPER2D_API UClass* Z_Construct_UClass_UPaperSpriteComponent_NoRegister();
@@ -150,6 +152,10 @@ void EmptyLinkFunctionForGeneratedCodeMyGun() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_InteractionBox_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_InteractionBox;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BulletBlueprint_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_BulletBlueprint;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -197,9 +203,23 @@ void EmptyLinkFunctionForGeneratedCodeMyGun() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyGun_Statics::NewProp_InteractionBox = { "InteractionBox", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyGun, InteractionBox), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyGun_Statics::NewProp_InteractionBox_MetaData), Z_Construct_UClass_AMyGun_Statics::NewProp_InteractionBox_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyGun_Statics::NewProp_BulletBlueprint_MetaData[] = {
+		{ "Category", "Projectile" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// bullet blueprint\n" },
+#endif
+		{ "ModuleRelativePath", "MyGun.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "bullet blueprint" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMyGun_Statics::NewProp_BulletBlueprint = { "BulletBlueprint", nullptr, (EPropertyFlags)0x0014000000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyGun, BulletBlueprint), Z_Construct_UClass_UClass, Z_Construct_UClass_AMyBullet_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyGun_Statics::NewProp_BulletBlueprint_MetaData), Z_Construct_UClass_AMyGun_Statics::NewProp_BulletBlueprint_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyGun_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyGun_Statics::NewProp_GunSprite,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyGun_Statics::NewProp_InteractionBox,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyGun_Statics::NewProp_BulletBlueprint,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMyGun_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMyGun>::IsAbstract,
@@ -239,9 +259,9 @@ void EmptyLinkFunctionForGeneratedCodeMyGun() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyGun, AMyGun::StaticClass, TEXT("AMyGun"), &Z_Registration_Info_UClass_AMyGun, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyGun), 2482628667U) },
+		{ Z_Construct_UClass_AMyGun, AMyGun::StaticClass, TEXT("AMyGun"), &Z_Registration_Info_UClass_AMyGun, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyGun), 3648441200U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_3461108023(TEXT("/Script/OneTapGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_42439851(TEXT("/Script/OneTapGame"),
 		Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

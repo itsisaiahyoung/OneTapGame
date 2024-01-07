@@ -26,6 +26,11 @@ public:
     // Function to equip a gun
     void EquipGun(AMyGun* GunToEquip);
 
+    // Function for handling fire input
+    void Fire();
+
+    void Throw();
+
 private:
     float CurrentGunAngle;
     AMyGun* EquippedGun;
@@ -55,4 +60,12 @@ protected:
     // Move Input Action
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
     class UInputAction* MoveAction;
+
+    // Fire Input Action
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    class UInputAction* FireAction;
+
+    // Throw Input Action
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    class UInputAction* ThrowAction;
 };

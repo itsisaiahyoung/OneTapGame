@@ -33,6 +33,12 @@
     <Filter Include="Source\OneTapGame">
       <UniqueIdentifier>{2B7FC97E-EA63-3D51-B1CD-0EAAF5635D53}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\OneTapGame\MyBullet.cpp">
+      <Filter>Source\OneTapGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OneTapGame\MyBullet.h">
+      <Filter>Source\OneTapGame</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\OneTapGame\MyCharacter.cpp">
       <Filter>Source\OneTapGame</Filter>
     </ClCompile>
@@ -43,6 +49,12 @@
       <Filter>Source\OneTapGame</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\OneTapGame\MyGun.h">
+      <Filter>Source\OneTapGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\OneTapGame\MyMenuWidget.cpp">
+      <Filter>Source\OneTapGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OneTapGame\MyMenuWidget.h">
       <Filter>Source\OneTapGame</Filter>
     </ClInclude>
     <None Include="..\..\Source\OneTapGame\OneTapGame.Build.cs">

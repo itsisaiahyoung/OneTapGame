@@ -1,17 +1,17 @@
 #include "MyGun.h"
-#include "MyCharacter.h" // Include your character header
+#include "MyBullet.h"
+#include "MyCharacter.h"
 
 // Sets default values
 AMyGun::AMyGun()
 {
-    // Set this actor to call Tick() every frame. You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = false;
 
-    // Initialize the gun sprite component and attach it to the root component
+    // Initializes the gun sprite component and attaches it to the root component
     GunSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("GunSprite"));
     RootComponent = GunSprite;
 
-    // Create a collision box for interaction
+    // Creates a collision box for interaction
     InteractionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("InteractionBox"));
     InteractionBox->SetupAttachment(RootComponent);
     InteractionBox->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f)); // Adjust the size as needed
@@ -19,6 +19,10 @@ AMyGun::AMyGun()
 
     // Register the overlap event
     InteractionBox->OnComponentBeginOverlap.AddDynamic(this, &AMyGun::OnOverlapBegin);
+
+    // gun sprite component
+    GunSprite->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+    GunSprite->SetCollisionProfileName(TEXT("BlockAllDynamic")); // Adjust as needed
 }
 
 // Called when the game starts or when spawned
@@ -29,15 +33,36 @@ void AMyGun::BeginPlay()
 
 bool AMyGun::CanBePickedUp() const
 {
-    // Implement logic to determine if the gun can be picked up.
-    return true; // For now, let's assume it can always be picked up.
+    return true;
 }
 
 void AMyGun::Fire()
 {
-    // Firing logic goes here
-    // This could include instantiating bullet actors, playing sound effects, animations, etc.
+    if (GetWorld())
+    {
+        // Location and rotation for the bullet to spawn
+        FVector Location = GetActorLocation();
+        FRotator Rotation = GetActorRotation();
+
+        // Bullet spawn parameters
+        FActorSpawnParameters SpawnParams;
+        SpawnParams.Owner = this;
+        SpawnParams.Instigator = GetInstigator();
+
+        // Spawn the bullet
+        AMyBullet* Bullet = GetWorld()->SpawnActor<AMyBullet>(BulletBlueprint, Location, Rotation, SpawnParams);
+        if (Bullet)
+        {
+            FVector ShootDirection = Rotation.Vector();
+            Bullet->FireInDirection(ShootDirection);
+
+            // Add a log here to indicate that the gun has fired
+            UE_LOG(LogTemp, Warning, TEXT("Gun fired!"));
+        }
+    }
 }
+
+
 
 void AMyGun::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -53,7 +78,6 @@ void AMyGun::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherAc
             // Logic to handle the gun being picked up by the player
             PlayerCharacter->EquipGun(this);
 
-            // Optionally, disable collision and hide the gun in the world
             SetActorEnableCollision(false);
             // SetActorHiddenInGame(true);
         }

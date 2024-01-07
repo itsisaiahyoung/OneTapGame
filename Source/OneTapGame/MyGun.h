@@ -4,6 +4,7 @@
 #include "GameFramework/Actor.h"
 #include "PaperSpriteComponent.h"
 #include "Components/BoxComponent.h"
+#include "MyBullet.h"
 #include "MyGun.generated.h"
 
 UCLASS()
@@ -27,11 +28,15 @@ public:
     // Interaction box for picking up the gun
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
     UBoxComponent* InteractionBox;
+        
+    // bullet blueprint
+    UPROPERTY(EditDefaultsOnly, Category = "Projectile")
+    TSubclassOf<AMyBullet> BulletBlueprint;
+
 
     // Method to check if the gun can be picked up
     bool CanBePickedUp() const;
 
-    // Implement the Fire method
     void Fire();
 
     // Overlap event handler
