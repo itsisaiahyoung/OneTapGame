@@ -114,13 +114,7 @@ void EmptyLinkFunctionForGeneratedCodeMyBullet() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyBullet_Statics::NewProp_BulletLifespan_MetaData[] = {
 		{ "Category", "Bullet" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Property to specify the bullet's lifespan in seconds\n" },
-#endif
 		{ "ModuleRelativePath", "MyBullet.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Property to specify the bullet's lifespan in seconds" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMyBullet_Statics::NewProp_BulletLifespan = { "BulletLifespan", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyBullet, BulletLifespan), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyBullet_Statics::NewProp_BulletLifespan_MetaData), Z_Construct_UClass_AMyBullet_Statics::NewProp_BulletLifespan_MetaData) };
@@ -166,9 +160,9 @@ void EmptyLinkFunctionForGeneratedCodeMyBullet() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyBullet_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyBullet, AMyBullet::StaticClass, TEXT("AMyBullet"), &Z_Registration_Info_UClass_AMyBullet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyBullet), 313573893U) },
+		{ Z_Construct_UClass_AMyBullet, AMyBullet::StaticClass, TEXT("AMyBullet"), &Z_Registration_Info_UClass_AMyBullet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyBullet), 2265737370U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyBullet_h_2498663362(TEXT("/Script/OneTapGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyBullet_h_3931648141(TEXT("/Script/OneTapGame"),
 		Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyBullet_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyBullet_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

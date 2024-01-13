@@ -51,6 +51,12 @@
     <ClInclude Include="..\..\Source\OneTapGame\MyGun.h">
       <Filter>Source\OneTapGame</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\OneTapGame\MyItem.cpp">
+      <Filter>Source\OneTapGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OneTapGame\MyItem.h">
+      <Filter>Source\OneTapGame</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\OneTapGame\MyMenuWidget.cpp">
       <Filter>Source\OneTapGame</Filter>
     </ClCompile>
