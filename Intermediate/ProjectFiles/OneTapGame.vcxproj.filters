@@ -73,4 +73,9 @@
       <Filter>Source\OneTapGame</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GunProfile.h">
+      <Filter>Source\OneTapGame</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

@@ -4,7 +4,8 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/CharacterMovementComponent.h"
-#include "MyGun.h" // Include the MyGun header
+#include "MyGun.h"
+#include "MyItem.h"
 #include "PaperFlipbookComponent.h"
 
 
@@ -37,7 +38,7 @@ AMyCharacter::AMyCharacter()
     GetCharacterMovement()->AirControl = 0.5f; 
 
     CurrentGunAngle = 0.0f;
-    EquippedGun = nullptr;
+    EquippedItem = nullptr;
 
 }
 
@@ -109,51 +110,71 @@ void AMyCharacter::Move(const FInputActionValue& Value)
     }
 }
 
-void AMyCharacter::EquipGun(AMyGun* GunToEquip)
+void AMyCharacter::EquipItem(AMyItem* ItemToEquip)
 {
-    if (GunToEquip)
+    if (ItemToEquip)
     {
-        UE_LOG(LogTemp, Warning, TEXT("Equipping gun %s"), *GunToEquip->GetName());
-        GunToEquip->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-        GunToEquip->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::SnapToTargetIncludingScale);
-        EquippedGun = GunToEquip;
+        UE_LOG(LogTemp, Warning, TEXT("Equipping item %s"), *ItemToEquip->GetName());
+        ItemToEquip->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+        ItemToEquip->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::SnapToTargetIncludingScale);
+        EquippedItem = ItemToEquip;
     }
     else
     {
-        UE_LOG(LogTemp, Warning, TEXT("EquipGun called with null pointer."));
+        UE_LOG(LogTemp, Warning, TEXT("EquipItem called with null pointer."));
     }
 }
+
+void AMyCharacter::PickupItem(AMyItem* Item)
+{
+    if (Item)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Picking up item %s"), *Item->GetName());
+        EquipItem(Item);  // Equip the item automatically
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("PickupItem called with null pointer."));
+    }
+}
+
 
 void AMyCharacter::Fire()
 {
-    if (EquippedGun)
+    AMyGun* Gun = Cast<AMyGun>(EquippedItem);
+    if (Gun)
     {
-        EquippedGun->Fire();
+        Gun->Fire();
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("No gun equipped or equipped item is not a gun."));
     }
 }
 
+
 void AMyCharacter::Throw()
 {
-    if (EquippedGun)
+    if (EquippedItem)
     {
         FVector ThrowDirection = GetActorForwardVector();
         float ThrowForce = 1000.0f;
 
-        UE_LOG(LogTemp, Warning, TEXT("Throwing gun with direction: %s, force: %f"), *ThrowDirection.ToString(), ThrowForce);
+        UE_LOG(LogTemp, Warning, TEXT("Throwing item with direction: %s, force: %f"), *ThrowDirection.ToString(), ThrowForce);
 
-        UPrimitiveComponent* GunPrimitiveComponent = Cast<UPrimitiveComponent>(EquippedGun->GetRootComponent());
-        if (GunPrimitiveComponent)
+        UPrimitiveComponent* ItemPrimitiveComponent = Cast<UPrimitiveComponent>(EquippedItem->GetRootComponent());
+        if (ItemPrimitiveComponent)
         {
-            GunPrimitiveComponent->SetSimulatePhysics(true);
+            ItemPrimitiveComponent->SetSimulatePhysics(true);
         }
 
         // Detach the gun from the character
-        EquippedGun->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-        EquippedGun = nullptr; // Clear the equipped gun
+        EquippedItem->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+        EquippedItem = nullptr; // Clear the equipped gun
     }
     else
     {
-        UE_LOG(LogTemp, Warning, TEXT("No gun equipped to throw."));
+        UE_LOG(LogTemp, Warning, TEXT("No item equipped to throw."));
     }
 }
 
@@ -195,24 +216,24 @@ void AMyCharacter::Tick(float DeltaTime)
             // Define the radius of the arc
             float ArcRadius = 50.0f; // Adjust as needed
 
-            // Calculate the new position of the gun in the arc
-            FVector NewGunPosition = CharacterLocation + FVector(FMath::Cos(FMath::DegreesToRadians(ClampedAngle)) * ArcRadius, 0.0f, FMath::Sin(FMath::DegreesToRadians(ClampedAngle)) * ArcRadius);
+            // Calculate the new position of the item in the arc
+            FVector NewItemPosition = CharacterLocation + FVector(FMath::Cos(FMath::DegreesToRadians(ClampedAngle)) * ArcRadius, 0.0f, FMath::Sin(FMath::DegreesToRadians(ClampedAngle)) * ArcRadius);
 
-            if(EquippedGun)
+            if(EquippedItem)
 			{
-                // Update the gun's position
-                EquippedGun->SetActorLocation(NewGunPosition);
+                // Update the item's position
+                EquippedItem->SetActorLocation(NewItemPosition);
 
                 // Determine sprite rotation
                 if (ClampedAngle > 90.0f || ClampedAngle < -90.0f)
                 {
-                    // Flip the gun to face left
-                    EquippedGun->SetActorRotation(FRotator(0.0f, 180.0f, 0.0f));
+                    // Flip the item to face left
+                    EquippedItem->SetActorRotation(FRotator(0.0f, 180.0f, 0.0f));
                 }
                 else
                 {
-                    // Gun faces right (original orientation)
-                    EquippedGun->SetActorRotation(FRotator(0.0f, 0.0f, 0.0f));
+                    // Item faces right (original orientation)
+                    EquippedItem->SetActorRotation(FRotator(0.0f, 0.0f, 0.0f));
                 }
 			
 			}

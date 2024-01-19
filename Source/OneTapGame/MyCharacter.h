@@ -7,7 +7,8 @@
 #include "InputActionValue.h"
 #include "EnhancedInputComponent.h"
 #include "PaperSpriteComponent.h"
-#include "MyGun.h" // Include the MyGun header
+#include "MyGun.h"
+#include "MyItem.h"
 #include "MyCharacter.generated.h"
 
 UCLASS(Blueprintable, BlueprintType)
@@ -23,17 +24,20 @@ public:
     virtual void BeginPlay() override;
     virtual void Tick(float DeltaTime) override;
 
-    // Function to equip a gun
-    void EquipGun(AMyGun* GunToEquip);
+    // Function to equip an item
+    void EquipItem(AMyItem* ItemToEquip);
 
     // Function for handling fire input
     void Fire();
 
     void Throw();
 
+    // New function for item pickup
+    void PickupItem(AMyItem* Item);
+
 private:
     float CurrentGunAngle;
-    AMyGun* EquippedGun;
+    AMyItem* EquippedItem;
 
 protected:
     // Set up player input
