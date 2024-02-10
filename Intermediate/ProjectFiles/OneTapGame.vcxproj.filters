@@ -33,6 +33,15 @@
     <Filter Include="Source\OneTapGame">
       <UniqueIdentifier>{2B7FC97E-EA63-3D51-B1CD-0EAAF5635D53}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\OneTapGame\GunProfile.h">
+      <Filter>Source\OneTapGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\OneTapGame\MyAmmoCounter.cpp">
+      <Filter>Source\OneTapGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OneTapGame\MyAmmoCounter.h">
+      <Filter>Source\OneTapGame</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\OneTapGame\MyBullet.cpp">
       <Filter>Source\OneTapGame</Filter>
     </ClCompile>
@@ -70,11 +79,6 @@
       <Filter>Source\OneTapGame</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\OneTapGame\OneTapGame.h">
-      <Filter>Source\OneTapGame</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="GunProfile.h">
       <Filter>Source\OneTapGame</Filter>
     </ClInclude>
   </ItemGroup>

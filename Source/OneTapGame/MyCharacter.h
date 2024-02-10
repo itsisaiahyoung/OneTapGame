@@ -9,6 +9,7 @@
 #include "PaperSpriteComponent.h"
 #include "MyGun.h"
 #include "MyItem.h"
+#include "Blueprint/UserWidget.h" 
 #include "MyCharacter.generated.h"
 
 UCLASS(Blueprintable, BlueprintType)
@@ -31,6 +32,11 @@ public:
     void Fire();
 
     void Throw();
+
+    void Reload();
+
+    void StartFiring();
+    void StopFiring();
 
     // New function for item pickup
     void PickupItem(AMyItem* Item);
@@ -72,4 +78,8 @@ protected:
     // Throw Input Action
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
     class UInputAction* ThrowAction;
+
+    // Reload Input Action
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    class UInputAction* ReloadAction;
 };

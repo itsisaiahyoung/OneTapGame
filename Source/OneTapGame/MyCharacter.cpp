@@ -32,14 +32,13 @@ AMyCharacter::AMyCharacter()
     SideViewCameraComponent->bUsePawnControlRotation = false;
 
     // Set jump velocity
-    GetCharacterMovement()->JumpZVelocity = 600.f; 
+    GetCharacterMovement()->JumpZVelocity = 800.f; 
 
     // Set air control
     GetCharacterMovement()->AirControl = 0.5f; 
 
     CurrentGunAngle = 0.0f;
     EquippedItem = nullptr;
-
 }
 
 
@@ -72,11 +71,44 @@ void AMyCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputC
         // Moving
         EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AMyCharacter::Move);
 
-        // Bind the Fire action
-        EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &AMyCharacter::Fire);
+        // Bind the Fire action to start firing when the button is pressed
+        EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Started, this, &AMyCharacter::StartFiring);
+
+        // Bind the Fire action to stop firing when the button is released
+        EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Completed, this, &AMyCharacter::StopFiring);
 
         // Bind right-click to ThrowGun function
         EnhancedInputComponent->BindAction(ThrowAction, ETriggerEvent::Triggered, this, &AMyCharacter::Throw);
+
+        // Bind the Reload action
+        EnhancedInputComponent->BindAction(ReloadAction, ETriggerEvent::Triggered, this, &AMyCharacter::Reload);
+    }
+}
+
+void AMyCharacter::StartFiring() {
+    if (EquippedItem) {
+        AMyGun* Gun = Cast<AMyGun>(EquippedItem);
+        if (Gun) {
+            Gun->StartFiring();
+        }
+    }
+}
+
+void AMyCharacter::StopFiring() {
+    if (EquippedItem) {
+        AMyGun* Gun = Cast<AMyGun>(EquippedItem);
+        if (Gun) {
+            Gun->StopFiring();
+        }
+    }
+}
+
+void AMyCharacter::Reload()
+{
+    if (AMyGun* Gun = Cast<AMyGun>(EquippedItem))
+    {
+        Gun->ReloadAmmo();
+
     }
 }
 
@@ -131,6 +163,14 @@ void AMyCharacter::PickupItem(AMyItem* Item)
     {
         UE_LOG(LogTemp, Warning, TEXT("Picking up item %s"), *Item->GetName());
         EquipItem(Item);  // Equip the item automatically
+
+        // Check if the item is a gun
+        AMyGun* Gun = Cast<AMyGun>(Item);
+        if (Gun)
+        {
+            // Initialize the ammo UI for the gun
+            Gun->InitializeAmmoUI();
+        }
     }
     else
     {
@@ -138,19 +178,6 @@ void AMyCharacter::PickupItem(AMyItem* Item)
     }
 }
 
-
-void AMyCharacter::Fire()
-{
-    AMyGun* Gun = Cast<AMyGun>(EquippedItem);
-    if (Gun)
-    {
-        Gun->Fire();
-    }
-    else
-    {
-        UE_LOG(LogTemp, Warning, TEXT("No gun equipped or equipped item is not a gun."));
-    }
-}
 
 
 void AMyCharacter::Throw()
