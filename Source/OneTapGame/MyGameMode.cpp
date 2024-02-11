@@ -4,7 +4,7 @@
 
 AMyGameMode::AMyGameMode()
 {
-
+    // Constructor logic here (if needed)
 }
 
 void AMyGameMode::BeginPlay()

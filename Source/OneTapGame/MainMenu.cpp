@@ -14,5 +14,6 @@ void UMainMenu::NativeConstruct()
 
 void UMainMenu::OnPlayClicked()
 {
+    this->RemoveFromViewport();
     UGameplayStatics::OpenLevel(this, FName("LvlHouse"));
 }

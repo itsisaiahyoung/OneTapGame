@@ -90,27 +90,15 @@ void EmptyLinkFunctionForGeneratedCodeMyGun() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyGun_Statics::NewProp_AmmoCounterWidget_MetaData[] = {
 		{ "Category", "UI" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Reference to the AmmoCounterWidget\n" },
-#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "MyGun.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Reference to the AmmoCounterWidget" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyGun_Statics::NewProp_AmmoCounterWidget = { "AmmoCounterWidget", nullptr, (EPropertyFlags)0x00200800000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyGun, AmmoCounterWidget), Z_Construct_UClass_UMyAmmoCounter_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyGun_Statics::NewProp_AmmoCounterWidget_MetaData), Z_Construct_UClass_AMyGun_Statics::NewProp_AmmoCounterWidget_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyGun_Statics::NewProp_AmmoCounterWidgetClass_MetaData[] = {
 		{ "Category", "UI" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Class of the AmmoCounterWidget, set this in the editor\n" },
-#endif
 		{ "ModuleRelativePath", "MyGun.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Class of the AmmoCounterWidget, set this in the editor" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMyGun_Statics::NewProp_AmmoCounterWidgetClass = { "AmmoCounterWidgetClass", nullptr, (EPropertyFlags)0x0024080000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMyGun, AmmoCounterWidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UMyAmmoCounter_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMyGun_Statics::NewProp_AmmoCounterWidgetClass_MetaData), Z_Construct_UClass_AMyGun_Statics::NewProp_AmmoCounterWidgetClass_MetaData) };
@@ -258,9 +246,9 @@ void EmptyLinkFunctionForGeneratedCodeMyGun() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyGun, AMyGun::StaticClass, TEXT("AMyGun"), &Z_Registration_Info_UClass_AMyGun, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyGun), 884036109U) },
+		{ Z_Construct_UClass_AMyGun, AMyGun::StaticClass, TEXT("AMyGun"), &Z_Registration_Info_UClass_AMyGun, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyGun), 4129289075U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_3210945982(TEXT("/Script/OneTapGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_67009566(TEXT("/Script/OneTapGame"),
 		Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

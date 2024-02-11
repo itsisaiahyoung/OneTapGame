@@ -39,13 +39,7 @@ void EmptyLinkFunctionForGeneratedCodeMyBullet() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyBullet_DespawnBullet_Statics::Function_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Function to despawn the bullet\n" },
-#endif
 		{ "ModuleRelativePath", "MyBullet.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Function to despawn the bullet" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyBullet_DespawnBullet_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyBullet, nullptr, "DespawnBullet", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMyBullet_DespawnBullet_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMyBullet_DespawnBullet_Statics::Function_MetaDataParams) };
@@ -88,7 +82,7 @@ void EmptyLinkFunctionForGeneratedCodeMyBullet() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyBullet_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMyBullet_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMyBullet_DespawnBullet, "DespawnBullet" }, // 765171978
+		{ &Z_Construct_UFunction_AMyBullet_DespawnBullet, "DespawnBullet" }, // 928153108
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyBullet_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -160,9 +154,9 @@ void EmptyLinkFunctionForGeneratedCodeMyBullet() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyBullet_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyBullet, AMyBullet::StaticClass, TEXT("AMyBullet"), &Z_Registration_Info_UClass_AMyBullet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyBullet), 2265737370U) },
+		{ Z_Construct_UClass_AMyBullet, AMyBullet::StaticClass, TEXT("AMyBullet"), &Z_Registration_Info_UClass_AMyBullet, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyBullet), 434926162U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyBullet_h_3931648141(TEXT("/Script/OneTapGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyBullet_h_3593508862(TEXT("/Script/OneTapGame"),
 		Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyBullet_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyBullet_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
