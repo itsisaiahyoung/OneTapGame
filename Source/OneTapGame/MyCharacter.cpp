@@ -144,7 +144,7 @@ void AMyCharacter::Move(const FInputActionValue& Value)
 
 void AMyCharacter::EquipItem(AMyItem* ItemToEquip)
 {
-    if (ItemToEquip)
+    if (ItemToEquip && !EquippedItem)
     {
         UE_LOG(LogTemp, Warning, TEXT("Equipping item %s"), *ItemToEquip->GetName());
         ItemToEquip->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
@@ -153,16 +153,17 @@ void AMyCharacter::EquipItem(AMyItem* ItemToEquip)
     }
     else
     {
-        UE_LOG(LogTemp, Warning, TEXT("EquipItem called with null pointer."));
+        UE_LOG(LogTemp, Warning, TEXT("EquipItem failed"));
     }
 }
 
 void AMyCharacter::PickupItem(AMyItem* Item)
 {
-    if (Item)
+    if (Item && !EquippedItem)
     {
         UE_LOG(LogTemp, Warning, TEXT("Picking up item %s"), *Item->GetName());
         EquipItem(Item);  // Equip the item automatically
+        Item->OnPickedUp();
 
         // Check if the item is a gun
         AMyGun* Gun = Cast<AMyGun>(Item);
@@ -177,8 +178,6 @@ void AMyCharacter::PickupItem(AMyItem* Item)
         UE_LOG(LogTemp, Warning, TEXT("PickupItem called with null pointer."));
     }
 }
-
-
 
 void AMyCharacter::Throw()
 {

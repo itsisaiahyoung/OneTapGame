@@ -16,6 +16,10 @@ AMyItem::AMyItem()
     InteractionBox->SetBoxExtent(FVector(50.0f, 50.0f, 50.0f));
     InteractionBox->SetCollisionProfileName(TEXT("Trigger"));
     InteractionBox->OnComponentBeginOverlap.AddDynamic(this, &AMyItem::OnOverlapBegin);
+
+    ItemSprite->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
+
+
 }
 
 void AMyItem::BeginPlay()
@@ -25,8 +29,15 @@ void AMyItem::BeginPlay()
 
 bool AMyItem::CanBePickedUp() const
 {
-    return true; // Default implementation, can be overridden
+    return true; 
 }
+
+void AMyItem::OnPickedUp()
+{
+    SetActorEnableCollision(false);
+
+}
+
 
 void AMyItem::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -39,7 +50,6 @@ void AMyItem::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherA
         {
             UE_LOG(LogTemp, Warning, TEXT("Player %s is attempting to pick up an item."), *PlayerCharacter->GetName());
             PlayerCharacter->PickupItem(this);
-            SetActorEnableCollision(false);
         }
         else
         {
@@ -50,5 +60,5 @@ void AMyItem::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherA
 
 void AMyItem::TriggerAction()
 {
-    // Default implementation - does nothing
+  
 }

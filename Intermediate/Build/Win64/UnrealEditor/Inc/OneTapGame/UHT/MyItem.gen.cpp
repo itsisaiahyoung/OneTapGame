@@ -109,13 +109,7 @@ void EmptyLinkFunctionForGeneratedCodeMyItem() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyItem_OnOverlapBegin_Statics::Function_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Overlap event handler\n" },
-#endif
 		{ "ModuleRelativePath", "MyItem.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Overlap event handler" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyItem_OnOverlapBegin_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyItem, nullptr, "OnOverlapBegin", nullptr, nullptr, Z_Construct_UFunction_AMyItem_OnOverlapBegin_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyItem_OnOverlapBegin_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMyItem_OnOverlapBegin_Statics::MyItem_eventOnOverlapBegin_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMyItem_OnOverlapBegin_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMyItem_OnOverlapBegin_Statics::Function_MetaDataParams) };
@@ -160,7 +154,7 @@ void EmptyLinkFunctionForGeneratedCodeMyItem() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyItem_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMyItem_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMyItem_OnOverlapBegin, "OnOverlapBegin" }, // 816195054
+		{ &Z_Construct_UFunction_AMyItem_OnOverlapBegin, "OnOverlapBegin" }, // 2237240047
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyItem_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -239,9 +233,9 @@ void EmptyLinkFunctionForGeneratedCodeMyItem() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyItem_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyItem, AMyItem::StaticClass, TEXT("AMyItem"), &Z_Registration_Info_UClass_AMyItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyItem), 2102536719U) },
+		{ Z_Construct_UClass_AMyItem, AMyItem::StaticClass, TEXT("AMyItem"), &Z_Registration_Info_UClass_AMyItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyItem), 2518555185U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyItem_h_2253912629(TEXT("/Script/OneTapGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyItem_h_4242996338(TEXT("/Script/OneTapGame"),
 		Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyItem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyItem_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

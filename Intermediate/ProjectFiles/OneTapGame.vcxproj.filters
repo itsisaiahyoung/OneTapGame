@@ -36,6 +36,12 @@
     <ClInclude Include="..\..\Source\OneTapGame\GunProfile.h">
       <Filter>Source\OneTapGame</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\OneTapGame\MainMenu.cpp">
+      <Filter>Source\OneTapGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OneTapGame\MainMenu.h">
+      <Filter>Source\OneTapGame</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\OneTapGame\MyAmmoCounter.cpp">
       <Filter>Source\OneTapGame</Filter>
     </ClCompile>
@@ -54,6 +60,12 @@
     <ClInclude Include="..\..\Source\OneTapGame\MyCharacter.h">
       <Filter>Source\OneTapGame</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\OneTapGame\MyGameMode.cpp">
+      <Filter>Source\OneTapGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OneTapGame\MyGameMode.h">
+      <Filter>Source\OneTapGame</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\OneTapGame\MyGun.cpp">
       <Filter>Source\OneTapGame</Filter>
     </ClCompile>
@@ -64,12 +76,6 @@
       <Filter>Source\OneTapGame</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\OneTapGame\MyItem.h">
-      <Filter>Source\OneTapGame</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\OneTapGame\MyMenuWidget.cpp">
-      <Filter>Source\OneTapGame</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\OneTapGame\MyMenuWidget.h">
       <Filter>Source\OneTapGame</Filter>
     </ClInclude>
     <None Include="..\..\Source\OneTapGame\OneTapGame.Build.cs">

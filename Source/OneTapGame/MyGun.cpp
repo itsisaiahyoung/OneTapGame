@@ -12,16 +12,17 @@ AMyGun::AMyGun() : Super()
     GunSprite->SetupAttachment(RootComponent);
 
     // Set specific properties for GunSprite
-    GunSprite->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-    GunSprite->SetCollisionProfileName(TEXT("BlockAllDynamic"));
+    GunSprite->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+    GunSprite->SetCollisionProfileName(TEXT("NoCollision"));
+    GunSprite->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
 
     //gun firing animation
     FiringAnimation = CreateDefaultSubobject<UPaperFlipbookComponent>(TEXT("FiringAnimation"));
     FiringAnimation->SetupAttachment(RootComponent);
-    FiringAnimation->SetVisibility(false); // Default visibility set to false
+    FiringAnimation->SetVisibility(false);
 
     // Initialize gun profile properties (defaults)
-    FireRate = 1.0f; // Example default fire rate
+    FireRate = 1.0f;
     LastFireTime = 0.0f;
 
     bIsFiring = false;
@@ -32,12 +33,12 @@ AMyGun::AMyGun() : Super()
     AmmoCounterWidgetClass = nullptr;
 }
 
-// Called when the game starts or when spawned
+
 void AMyGun::BeginPlay()
 {
     Super::BeginPlay();
-    SetGunProfile(GunProfileName); // Assuming GunProfileName is set in the Editor
-    ReloadAmmo(); // Load full ammo on begin play
+    SetGunProfile(GunProfileName); 
+    ReloadAmmo();
 
     UpdateAmmoUI(); // Initial update
 }
@@ -99,7 +100,7 @@ void AMyGun::StartFiring()
     // Only set up automatic firing for automatic weapons
     if (IsAutomatic)
     {
-        // Start a repeating timer to handle automatic firing, if it's not already active
+
         if (!GetWorld()->GetTimerManager().IsTimerActive(FiringTimerHandle))
         {
             GetWorld()->GetTimerManager().SetTimer(FiringTimerHandle, this, &AMyGun::Fire, 1.0f / FireRate, true);
@@ -211,8 +212,6 @@ void AMyGun::SetGunProfile(FName ProfileName)
             FireRate = Profile->FireRate;
             IsAutomatic = Profile->IsAutomatic;
             CurrentGunProfile = *Profile; // Set the current gun profile
-            // Set other properties based on the profile
-            // Example: Damage = Profile->Damage;
         }
         else
         {

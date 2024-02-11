@@ -258,9 +258,9 @@ void EmptyLinkFunctionForGeneratedCodeMyGun() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyGun, AMyGun::StaticClass, TEXT("AMyGun"), &Z_Registration_Info_UClass_AMyGun, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyGun), 3714096342U) },
+		{ Z_Construct_UClass_AMyGun, AMyGun::StaticClass, TEXT("AMyGun"), &Z_Registration_Info_UClass_AMyGun, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyGun), 884036109U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_2731688971(TEXT("/Script/OneTapGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_3210945982(TEXT("/Script/OneTapGame"),
 		Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGun_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

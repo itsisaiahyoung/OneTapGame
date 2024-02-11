@@ -31,9 +31,9 @@ public:
     void FireInDirection(const FVector& ShootDirection);
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bullet")
-    float BulletLifespan = 5.0f; // Adjust the time in seconds as needed
+    float BulletLifespan = 5.0f; 
 
-    // Function to despawn the bullet
+
     UFUNCTION()
     void DespawnBullet();
 };

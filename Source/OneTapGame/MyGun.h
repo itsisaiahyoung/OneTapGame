@@ -19,14 +19,13 @@ public:
     AMyGun();
 
 protected:
-    // Called when the game starts or when spawned
+
     virtual void BeginPlay() override;
 
-    // Reference to the AmmoCounterWidget
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "UI")
     UMyAmmoCounter* AmmoCounterWidget;
 
-    // Class of the AmmoCounterWidget, set this in the editor
+
     UPROPERTY(EditDefaultsOnly, Category = "UI")
     TSubclassOf<UMyAmmoCounter> AmmoCounterWidgetClass;
 
@@ -81,7 +80,7 @@ private:
     // Fire rate of the gun
     float FireRate;
 
-    // Timestamp of the last time the gun fired
+
     float LastFireTime;
 
     // Method to set the gun properties based on the profile
