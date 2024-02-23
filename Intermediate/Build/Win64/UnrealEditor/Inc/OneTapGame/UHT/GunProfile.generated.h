@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ONETAPGAME_GunProfile_generated_h
 
-#define FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_GunProfile_h_11_GENERATED_BODY \
+#define FID_OneTapGame_Source_OneTapGame_GunProfile_h_11_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FGunProfile_Statics; \
 	static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -23,7 +23,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 template<> ONETAPGAME_API UScriptStruct* StaticStruct<struct FGunProfile>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_GunProfile_h
+#define CURRENT_FILE_ID FID_OneTapGame_Source_OneTapGame_GunProfile_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -1,23 +1,5 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+
 #include "MyGameMode.h"
-#include "MainMenu.h"
-#include "Blueprint/UserWidget.h"
 
-AMyGameMode::AMyGameMode()
-{
-    // Constructor logic here (if needed)
-}
-
-void AMyGameMode::BeginPlay()
-{
-    Super::BeginPlay();
-
-    // Create and add the main menu to the viewport
-    if (TSubclassOf<UUserWidget> MainMenuClass = LoadClass<UUserWidget>(nullptr, TEXT("/Game/Menu/MainMenuWidget.MainMenuWidget_C")))
-    {
-        UMainMenu* MainMenu = CreateWidget<UMainMenu>(GetWorld(), MainMenuClass);
-        if (MainMenu)
-        {
-            MainMenu->AddToViewport();
-        }
-    }
-}

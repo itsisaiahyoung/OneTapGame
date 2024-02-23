@@ -21,6 +21,9 @@
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
     <None Include="..\..\Config\DefaultEngine.ini">
       <Filter>Config</Filter>
     </None>
@@ -76,6 +79,12 @@
       <Filter>Source\OneTapGame</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\OneTapGame\MyItem.h">
+      <Filter>Source\OneTapGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\OneTapGame\MyMenuMode.cpp">
+      <Filter>Source\OneTapGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OneTapGame\MyMenuMode.h">
       <Filter>Source\OneTapGame</Filter>
     </ClInclude>
     <None Include="..\..\Source\OneTapGame\OneTapGame.Build.cs">

@@ -9,7 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMyGameMode() {}
 // Cross Module References
-	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
+	ENGINE_API UClass* Z_Construct_UClass_AGameMode();
 	ONETAPGAME_API UClass* Z_Construct_UClass_AMyGameMode();
 	ONETAPGAME_API UClass* Z_Construct_UClass_AMyGameMode_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_OneTapGame();
@@ -32,12 +32,15 @@ void EmptyLinkFunctionForGeneratedCodeMyGameMode() {}
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
 	UObject* (*const Z_Construct_UClass_AMyGameMode_Statics::DependentSingletons[])() = {
-		(UObject* (*)())Z_Construct_UClass_AGameModeBase,
+		(UObject* (*)())Z_Construct_UClass_AGameMode,
 		(UObject* (*)())Z_Construct_UPackage__Script_OneTapGame,
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMyGameMode_Statics::DependentSingletons) < 16);
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyGameMode_Statics::Class_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/**\n * \n */" },
+#endif
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering HLOD WorldPartition DataLayers Transformation" },
 		{ "IncludePath", "MyGameMode.h" },
 		{ "ModuleRelativePath", "MyGameMode.h" },
@@ -74,17 +77,18 @@ void EmptyLinkFunctionForGeneratedCodeMyGameMode() {}
 	{
 		return AMyGameMode::StaticClass();
 	}
+	AMyGameMode::AMyGameMode(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AMyGameMode);
 	AMyGameMode::~AMyGameMode() {}
-	struct Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGameMode_h_Statics
+	struct Z_CompiledInDeferFile_FID_OneTapGame_Source_OneTapGame_MyGameMode_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGameMode_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyGameMode, AMyGameMode::StaticClass, TEXT("AMyGameMode"), &Z_Registration_Info_UClass_AMyGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyGameMode), 2205291977U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OneTapGame_Source_OneTapGame_MyGameMode_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AMyGameMode, AMyGameMode::StaticClass, TEXT("AMyGameMode"), &Z_Registration_Info_UClass_AMyGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyGameMode), 2883387415U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGameMode_h_850642263(TEXT("/Script/OneTapGame"),
-		Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_conta_OneDrive_Documents_Unreal_Projects_OneTapGame_Source_OneTapGame_MyGameMode_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OneTapGame_Source_OneTapGame_MyGameMode_h_3025214538(TEXT("/Script/OneTapGame"),
+		Z_CompiledInDeferFile_FID_OneTapGame_Source_OneTapGame_MyGameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_OneTapGame_Source_OneTapGame_MyGameMode_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
